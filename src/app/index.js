@@ -1,6 +1,6 @@
 require("./style.css");
 const {Weather} = require('./weather')
-const weather = new Weather('santiago', 'dr')
+const weather = new Weather('Santo Domingo', 'do')
 
  const fetchweather = async() => {
     const data = await weather.getWeather()

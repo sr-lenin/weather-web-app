@@ -5,9 +5,9 @@ export class Weather {
     this.countryCode = countryCode;
   }
 
-  async getweather() {
+  async getWeather() {
     // es necesario poner la ciudad luegob del igual
-    const URI = `https://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.countryCode}&api=${this.apikey}`;
+    const URI = `https://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.countryCode}&appid=${this.apikey}`;
     const response = await fetch(URI);
     const data = await response.json();
     return data;
