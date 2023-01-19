@@ -12,4 +12,10 @@ export class Weather {
     const data = await response.json();
     return data;
   }
+
+  
+  changeLocation(city, countryCode) {
+    this.city = city;
+    this.countryCode = countryCode;
+  }
 }

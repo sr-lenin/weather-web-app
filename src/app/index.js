@@ -1,11 +1,14 @@
 require("./style.css");
 const { Weather } = require("./weather");
 const { UI } = require("./UI");
+const { Store } = require("./store");
 
-const weather = new Weather("Santo Domingo", "do");
 const ui = new UI();
+const store = new Store()
+const { city, countryCode } = store.getLocationData()
+const weather = new Weather(city, countryCode);
 
-const fetchweather = async () => {
+const fetchWeather = async () => {
   const data = await weather.getWeather();
   ui.render(data);
 };
@@ -13,8 +16,10 @@ const fetchweather = async () => {
 document.querySelector("#w-change-btn").addEventListener("click", (event) => {
   event.preventDefault();
   const city = document.querySelector("#city").value;
-  const countryCode = document.querySelector("#countryCode").value;
-  console.log(city, countryCode);
+  const countryCode = document.querySelector("#country-code").value;
+  weather.changeLocation(city, countryCode);
+  store.setLocationData(city, countryCode)
+  fetchWeather();
 });
 
-document.addEventListener("DOMContentLoaded", fetchweather);
+document.addEventListener("DOMContentLoaded", fetchWeather);

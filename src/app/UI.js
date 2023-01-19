@@ -12,13 +12,9 @@ export class UI {
     this.desc.textContent = weather.weather[0]["description"];
     const celcius = weather.main.temp - 272.15;
     this.string.textContent = celcius.toFixed(2) + "°C";
-    this.humidity.textContent = "humidity" + weather.main.humidity + "%";
+    this.humidity.textContent = "Humidity" + weather.main.humidity + "%";
     console.log(weather);
-    this.wind.textContent = "wind" + weather.wind.speed + "m/s";
+    this.wind.textContent = "Wind" + weather.wind.speed + "m/s";
   }
 
-  changeLocation(city, countryCode) {
-    this.city = city
-    this.countryCode = countryCode
-  }
 }
