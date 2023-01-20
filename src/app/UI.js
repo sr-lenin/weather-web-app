@@ -13,7 +13,6 @@ export class UI {
     const celcius = weather.main.temp - 272.15;
     this.string.textContent = celcius.toFixed(2) + "°C";
     this.humidity.textContent = "Humidity" + weather.main.humidity + "%";
-    console.log(weather);
     this.wind.textContent = "Wind" + weather.wind.speed + "m/s";
   }
 

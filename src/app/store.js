@@ -6,10 +6,7 @@ export class Store {
     this.defaulCountry = "do";
   }
 
-  setLocationData(city, countryCode) {
-    localStorage.setItem("City", city);
-    localStorage.setItem("CountryCode", countryCode);
-  }
+
 
   getLocationData() {
     if (localStorage.getItem("city") === null) {
@@ -27,5 +24,11 @@ export class Store {
       city: this.city,
       countryCode: this.countryCode,
     };
+  }
+
+
+  setLocationData(city, countryCode) {
+    localStorage.setItem("city", city);
+    localStorage.setItem("countryCode", countryCode);
   }
 }
